@@ -26,7 +26,6 @@ class ModelBuilder(mz.Model):
             if nm != 'vers':
                 self.deps_inds[nm] = i
 
-
         for rd in records.keys():
             version = records[rd].pop('vers')
             self.add_constraint(rd, version, records[rd])
