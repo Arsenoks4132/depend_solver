@@ -9,7 +9,7 @@
 
 ```
 root <root version>: <dependency name 1> <dependency version 1> ... <dependency name n> <dependency version n>
-<package name>: <dependency name 1> <dependency version 1> ... <dependency name n> <dependency version n>
+<package name> <package version>: <dependency name 1> <dependency version 1> ... <dependency name n> <dependency version n>
 ...
 ```
 
