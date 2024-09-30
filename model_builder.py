@@ -21,6 +21,9 @@ class ModelBuilder(mz.Model):
 
         self.v = mz.Array(mz.var(range(0, 9)), shape=(len(deps_raw_list) + 1, 3))
 
+        for i in range(len(deps_raw_list)):
+            self.constraints += [self.v[i, 0] >= 1]
+
         for i in range(1, len(deps_raw_list) + 1):
             nm = deps_raw_list.pop()
             if nm != 'vers':
@@ -72,7 +75,5 @@ class ModelBuilder(mz.Model):
         message = ''
         for name, ind in self.deps_inds.items():
             version = '.'.join(map(str, result[ind]))
-            if version == '0.0.0':
-                version = 'any'
             message += f'{name}: {version}\n'
         return message
